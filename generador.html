@@ -1,0 +1,74 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    
+    // Obtén el valor del campo de entrada
+    var nombre = $('#nombre').val();
+    
+    // Crea una nueva instancia de jsPDF
+    var pdf = new jsPDF();
+    
+    // Añade texto al PDF
+    pdf.setFontSize(22);
+    pdf.text('República Bolivariana de Venezuela', 20, 20);
+    pdf.setFontSize(18);
+    pdf.text('Universidad Politécnica Territorial de Puerto Cabello', 20, 30);
+    pdf.text('Vicerrectorado Académico', 20, 40);
+    pdf.text('Coordinación General de Servicio Comunitario', 20, 50);
+    pdf.setFontSize(16);
+    pdf.text('CARTA DE APROBACIÓN DE INDUCCIÓN', 20, 60);
+    pdf.text('Por medio de la presente,', 20, 70);
+    pdf.text('Yo, ' + nombre + ', ...', 20, 80);
+    // etc.
+    
+    // Añade una imagen al PDF
+    // Necesitarás tener la imagen en formato Data URL
+    // var imgData = 'data:image/jpeg;base64,...';
+    // pdf.addImage(imgData, 'JPEG', 20, 90);
+    
+    
+    // Guarda el PDF
+    pdf.save('pdf.pdf');
+
+// Convierte el PDF en una cadena de datos
+var pdfData = pdf.output();
+
+// Crea un objeto Blob con los datos del PDF
+var blob = new Blob([pdfData], {type: 'application/pdf'});
+
+// Crea una URL para el Blob
+var url = URL.createObjectURL(blob);
+
+// Crea un elemento iframe para visualizar el PDF
+var iframe = document.createElement('iframe');
+iframe.src = url;
+iframe.width = '100%';
+iframe.height = '100%';
+
+// Añade el iframe al div
+document.querySelector('#planilla').appendChild(iframe);
+
+
+  });
+});
+    
+    html2canvas(document.querySelector("#planilla")).then(function(canvas) {
+      var imgData = canvas.toDataURL('image/png');
+      var pdf = new jsPDF();
+      pdf.addImage(imgData, 'PNG', 0, 0);
+      pdf.save('pdf.pdf');
+    });
+
+</script>
+
+<form action="#">
+  <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+  <input type="submit" value="Generar PDF">
+</form>
+
+<div id="planilla"></div>
