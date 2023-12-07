@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html
+ 
+lang="es">
+
+<head>
+
+    
+<meta
+ 
+charset="UTF-8">
+
+    
+<meta
+ 
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+    
+<title>Generador de PDF</title>
+</head>
+<body>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+
+    <script>
+    window.jsPDF = window.jspdf.jsPDF;
+     document.addEventListener("DOMContentLoaded", function() { // Your code using jsPDF goes here
+    
+    var pdf = new jsPDF('p', 'mm', 'A4');
+    
+    pdf.text('Hola mundo!', 10, 10);
+    
+    pdf.save('hola-mundo.pdf'); }); </script>
+
+
+</body>
+</html>
