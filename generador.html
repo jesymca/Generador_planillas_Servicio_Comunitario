@@ -31,7 +31,10 @@ $(document).ready(function() {
     var nombre = $('#nombre').val();
     var cedula = $('#cedula').val();
     var programa = $('#programa').val();
- 
+    var grado = $('#grado').val();
+    var trayecto = $('#trayecto').val();
+    var periodoVisible = $('#periodo').val() || "";
+    var carrera = $('#carrera').val();
     // Crea una nueva instancia de jsPDF
     var pdf = new jsPDF();
 
@@ -53,8 +56,8 @@ $(document).ready(function() {
     pdf.text('CARTA DE APROBACIÓN DE INDUCCIÓN', 60, 60, {align: 'center', style: 'bold'});
     pdf.setFontSize(12);
     pdf.text('Por medio de la presente,', 20, 70);
-   // pdf.text('Yo, PITRE MATA JOKAJANNYS DEL VALLE portador/a de la C.I. V-13956073 en mi condición de Coordinador(a) General de Servicio Comunitario de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC) hago constar por medio de la presente que él ciudadano bachiller, ' + nombre + ', ...', 20, 80);
-   var texto = 'Yo, ' + nombreCoordServicioCominitario + ' portador/a de la C.I. ' + cedulaCoordServicioCominitario + ' en mi condición de ' + cargoCoordServicioCominitario + ' hago constar por medio de la presente que él ciudadano bachiller, ' + nombre + ', portador de la C.I. ' + cedula + ' quien pertenece  a nuestra casa de estudios y es cursante del INDIQUE_SEMESTRE_O_TRAYECTO del '+ programa +' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC) ha cumplido con el requisito de inducción según lo establecido en el  Art.12 de la LEY DEL SERVICIO COMUNITARIO DEL ESTUDIANTE DE EDUCACIÓN SUPERIOR (LSCEES), que establece: ';
+   var texto = 'Yo, ' + nombreCoordServicioCominitario + ' portador/a de la C.I. ' + cedulaCoordServicioCominitario + ' en mi condición de ' + cargoCoordServicioCominitario + ' hago constar por medio de la presente que él ciudadano bachiller, ' + nombre + ', portador de la C.I. ' + cedula + ' quien pertenece  a nuestra casa de estudios y es cursante deL '+ grado +' '+ periodoVisible+' de '+ programa +' '+ carrera +' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC) ha cumplido con el requisito de inducción según lo establecido en el  Art.12 de la LEY DEL SERVICIO COMUNITARIO DEL ESTUDIANTE DE EDUCACIÓN SUPERIOR (LSCEES), que establece: ';
+
  //  var lineas = pdf.splitText (texto, 10); 
  var x = 20; 
   var y = 80; 
@@ -124,24 +127,37 @@ document.querySelector('#planilla').appendChild(iframe);
   <div class="container d-flex justify-content-center align-items-center h-100">
     <div class="row col-lg-6 col-sm-12">
       <div class="mb-3">
-        <input type="text" name="nombre" id="nombre" placeholder="Indique su Nombre" class="form-control">
+        <input type="text" name="nombre" id="nombre" placeholder="Indique su Nombre" class="form-control" required>
       </div>
-      <div class="mb-3">
-        <input type="text" name="cedula" id="cedula" placeholder="Indique su Cedula" class="form-control">
+      <div class="form-floating  mb-3">
+        <input type="text" name="cedula" id="cedula" placeholder="Indique su Cedula" class="form-control" required>
+        <label for="Programa">Cedula: Use el Formato V-123456789 E-123456789</label>
       </div>
       <div class="form-floating mb-3">
-        <select class="form-select" id="Programa" aria-label="Programa">
-          <option selected>Seleccione</option>
-          <option value="PROGRAMA NACIONAL DE FORMACION">PNF</option>
+        <select class="form-select" name="programa" id="programa" aria-label="Programa" required>
+          <option value="">Seleccione</option>
+          <option value="EL PROGRAMA NACIONAL DE FORMACION">PNF</option>
           <option value="LA CARRERA DE">Tradicional</option>
         </select>
         <label for="Programa">Seleccione tipo de Programa</label>
       </div>
       <div class="form-floating mb-3">
-        <select class="form-select" name="grado" id="grado" aria-label="grado">
-          <option selected>Seleccione</option>
+        <select class="form-select" name="grado" id="grado" aria-label="grado" required>
+          <option value="">Seleccione</option>
         </select>
         <label for="grado">Seleccione Grado</label>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" name="periodo" id="periodo" aria-label="periodo" style="display: none;">
+          <option value="">Seleccione</option>
+        </select>
+        <label for="periodo">Seleccione Periodo</label>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" name="carrera" id="carrera" aria-label="carrera" >
+          <option value="">Seleccione</option>
+        </select>
+        <label for="carrera">Seleccione Carrera</label>
       </div>
       <input class="btn btn-info" type="submit" value="Generar PDF">
     </div>
@@ -149,8 +165,17 @@ document.querySelector('#planilla').appendChild(iframe);
 </form>
 
 <script>
-const programaSelect = document.getElementById("Programa");
+const programaSelect = document.getElementById("programa");
+programaSelect.options[0].setAttribute("disabled", true);
 const gradoSelect = document.getElementById("grado");
+gradoSelect.options[0].setAttribute("disabled", true);
+
+const trayectoSelect = document.getElementById("trayecto");
+const periodoSelect = document.getElementById("periodo");
+periodoSelect.options[0].setAttribute("disabled", true);
+
+const carreraSelect = document.getElementById("carrera");
+carreraSelect.options[0].setAttribute("disabled", true);
 
 programaSelect.addEventListener("change", function() {
   // Obtenemos el valor del select de programa
@@ -159,26 +184,60 @@ programaSelect.addEventListener("change", function() {
   // Actualizamos las opciones del select de grado
   gradoSelect.innerHTML = "";
 
-  if (programa === "PROGRAMA NACIONAL DE FORMACION") {
+  if (programa === "EL PROGRAMA NACIONAL DE FORMACION") {
     // Agregamos las opciones del PNF
     gradoSelect.innerHTML += `
-      <option value="1">Primer Semestre</option>
-      <option value="2">Segundo Semestre</option>
-      <option value="3">Tercer Semestre</option>
-      <option value="4">Cuarto Semestre</option>
-      <option value="5">Quinto Semestre</option>
-      <option value="6">Sexto Semestre</option>
+      <option value="TRAYECTO 1">Trayecto 1</option>
+      <option value="TRAYECTO 2">Trayecto 2</option>
+      <option value="TRAYECTO 3">Trayecto 3</option>
+      <option value="TRAYECTO 4">Trayecto 4</option>
     `;
+
+    periodoSelect.innerHTML = `
+      <option value="PERIODO I">Periodo 1</option>
+      <option value="PERIODO II">Periodo 2</option>
+      <option value="PERIODO III">Periodo 3</option>
+      <option value="PERIODO VI">Periodo 4</option>
+          `;
+
+    carreraSelect.innerHTML = `
+      <option value="INFORMATICA">Informatica</option>
+      <option value="TURISMO">Turismo</option>
+      <option value="DISTRIBUCION Y LOGISTICA">Distribucion y logistica</option>
+          `;
+    
+
+    // Habilitamos el select de periodo
+    periodoSelect.style.display = "block";
   } else if (programa === "LA CARRERA DE") {
+    periodoSelect.value = null;
     // Agregamos las opciones de la carrera tradicional
     gradoSelect.innerHTML += `
-      <option value="1">Primer Año</option>
-      <option value="2">Segundo Año</option>
-      <option value="3">Tercer Año</option>
-      <option value="4">Cuarto Año</option>
+      <option value="PRIMER SEMESTRE">Primer Semestre</option>
+      <option value="SEGUNDO SEMESTRE">Segundo Semestre</option>
+      <option value="TERCER SEMESTRE">Tercer Semestre</option>
+      <option value="CUARTO SEMESTRE">Cuarto Semestre</option>
+      <option value="QUINTO SEMESTRE">Quinto Semestre</option>
+      <option value="SEXTO SEMESTRE">Sexto Semestre</option>
     `;
+
+    carreraSelect.innerHTML = `
+      <option value="MECANICA INDUSTRIAL">Mecanica industrial</option>
+      <option value="MECANICA TERMICA">Mecanica termica</option>
+      <option value="MECANICA AUTOMOTRIZ">Mecanica automotriz</option>
+          `;
+
+    // Ocultamos el select de periodo
+    periodoSelect.style.display = "none";
+  } else {
+    // Ocultamos ambos selects
+    trayectoSelect.style.display = "none";
+    periodoSelect.style.display = "none";
   }
+
+
 });
+
 </script>
 
 <div id="planilla"></div>
