@@ -12145,22 +12145,24 @@ for (var i = 1; i <= cantidad_integrantes; i++) {
 var body_integrantes = [
     [{text: 'Nombre y Apellido', bold: true, alignment: 'center'}, {text: 'Cedula', bold: true, alignment: 'center'}, {text: 'Firma', bold: true, alignment: 'center'}]
 ];
-
-for (var i = 1; i <= cantidad_integrantes; i++) {
-    var nombre = integrantes['nombre_integrante_' + i];
-    var cedula = integrantes['cedula_integrante_' + i];
-    body_integrantes.push([nombre, cedula, '']);
-}
-
 var body_integrantes_b = [
     [{text: 'Nombre y Apellido', bold: true, alignment: 'center'}, {text: 'Cedula', bold: true, alignment: 'center'}]
 ];
 
 for (var i = 1; i <= cantidad_integrantes; i++) {
-    var nombre_b = integrantes['nombre_integrante_' + i];
-    var cedula_b = integrantes['cedula_integrante_' + i];
+    var nombre = integrantes['nombre_integrante_' + i];
+    var cedula = integrantes['cedula_integrante_' + i];
+    body_integrantes.push([nombre, cedula, '']);
     body_integrantes_b.push([nombre, cedula]);
 }
+
+var body_integrantes = JSON.parse(JSON.stringify(body_integrantes));
+
+var body_integrantes_copy = JSON.parse(JSON.stringify(body_integrantes_b));
+var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
+
+//console.log(body_integrantes);
+//console.log(body_integrantes_b);
 
     
     var tableBody = decodeHtml('\nLibro N° ______________\n\nFolio N° ______________\n\nLínea N° ______________\n\nFecha: _______/_______ /________');
@@ -12344,6 +12346,7 @@ for (var i = 1; i <= cantidad_integrantes; i++) {
             }
         },
         "\n\n",
+     
         'Solicitud que se hace en fecha: ' + fechaact,
         "\n\n\n\n\n",
         'Recibido por: ____________________________________',
@@ -12372,6 +12375,154 @@ for (var i = 1; i <= cantidad_integrantes; i++) {
       },
       layout: 'noBorders'
     },
+    { text: 'CARTA AL TUTOR', fontSize: 16, alignment: 'center', bold: true },
+
+    { text: [
+   
+    'Ciudadano (a). ',
+    { text: nombre_tutor, bold: true },
+       "\n",
+      'Presente.-',
+    "\n\n",
+    {text: '_     ', color: 'white'},
+    'Reciba un cordial saludo, se tiene el agrado de dirigirse a usted, en la oportunidad de postular a los bachilleres que se mencionan a continuación:',
+
+    ], 
+  fontSize: 12,
+  alignment: 'justify',
+  margin: [0, 10, 0, 10]
+},
+
+    {
+            table: {
+                headerRows: 1,
+                widths: ['*', '*'],
+                body: body_integrantes_copy,
+                alignment: 'center'
+            }
+        },
+{ text: [
+    {text: '_     ', color: 'white'},
+    'Quienes son cursantes del',
+    { text: grado, bold: true },
+    ' ',
+    { text: periodoVisible, bold: true },
+    ' de ',
+    { text: programa, bold: true },
+    ' ',
+    { text: carrera, bold: true },
+    ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC), para que puedan cumplir con sus 120 horas de su servicio comunitario, los mencionados estudiantes han cumplido con lo estipulado por la ley del servicio comunitario, artículos 12 y 16, y pretenden realizar un proyecto el cual esta titulado: ',
+    { text: titulo_proyecto, bold: true },
+    ' Y basado en: ',
+    { text: descripcion_proyecto, bold: true },
+    ' Por lo tanto se recurre a su buena disposición en recibir a los estudiantes y asignar a una persona guía para que cumplan con sus 120 horas dentro de su departamento; a fin de llevar a cabo su servicio comunitario digno de profesionales.',
+    "\n\n",
+    {text: '_     ', color: 'white'},
+    'Sin otro particular quedo a la espera de su pronta y positiva respuesta me despido de usted. ',
+  ], 
+  fontSize: 12,
+  alignment: 'justify',
+  margin: [0, 20, 0, 80]
+},
+
+{ text: nombreCoordServicioCominitario, bold: true, fontSize: 12,
+  alignment: 'center',
+  margin: [0, 0, 0, 0] },
+{ text: cedulaCoordServicioCominitario, bold: true, fontSize: 12,
+  alignment: 'center',
+  margin: [0, 0, 0, 0] },
+{ text: cargoCoordServicioCominitario, bold: true, fontSize: 12,
+  alignment: 'center',
+  margin: [0, 0, 0, 0] },
+
+{ text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+  alignment: 'right',
+  margin: [0, 10, 0, 0] },
+
+  // CUARTA PAG
+
+  { text: ' ', pageBreak: 'after' }, 
+
+  {
+      table: {
+        widths: ['auto', '*'],
+        body: [
+          [
+            {
+              image: logouptpc,
+              width: 100,
+              height: 100,
+              alignment: 'top'
+            },
+            [
+              { text: 'República Bolivariana de Venezuela', fontSize: 14, bold: true },
+              { text: 'Universidad Politécnica Territorial de Puerto Cabello', fontSize: 14, bold: true },
+              { text: 'Vicerrectorado Académico', fontSize: 14, bold: true },
+              { text: 'Coordinación General de Servicio Comunitario', fontSize: 14, bold: true }
+            ]
+          ]
+        ]
+      },
+      layout: 'noBorders'
+    },
+    { text: 'CARTA DE ACEPTACIÓN DE SERVICIO COMUNITARIO', fontSize: 16, alignment: 'center', bold: true },
+    { text: [
+   {text: '_     ', color: 'white'},
+   'Reciba un cordial saludo Prof. ',
+   { text: nombreCoordServicioCominitario, bold: true },
+   ' Portadora de la C.I.: ',
+   { text: cedulaCoordServicioCominitario, bold: true },
+   ' ',
+   { text: cargoCoordServicioCominitario, bold: true },
+   ' por medio de la presente, hacemos explícito nuestro interés de convertirnos en organización / proyecto receptor de estudiantes que deban cumplir con la Ley de Servicio Comunitario. Igualmente, manifestamos formalmente la ',
+   { text: 'ACEPTACION', bold: true },
+   ' de incorporación al ',
+   { text: lugar_de_su_servicio, bold: true },
+   ' a los prestadores de servicio comunitario que se mencionan a continuación: '
+
+   ], 
+ fontSize: 12,
+ alignment: 'justify',
+ margin: [0, 10, 0, 10]
+},
+{
+            table: {
+                headerRows: 1,
+                widths: ['*', '*'],
+                body: body_integrantes_copy_2,
+                alignment: 'center'
+            }
+        },
+{ text: [
+        {text: '_     ', color: 'white'},
+        'Quienes comenzarán sus labores, según plan de actividades y metas previamente acordadas. Esperamos que la comunicación se mantenga fluida y nos comprometemos a facilitar las condiciones en las cuales trabajará el alumno en nuestro departamento oficina o espacio, y a asegurar un supervisor o asesor que oriente las visitas a campo y la ejecución de su plan de actividades y metas, así como monitorear el cumplimiento de las horas de servicio acordadas.',
+        "\n",
+        {text: '_     ', color: 'white'},
+       'Sin otro particular al qué hacer referencia y esperando los frutos de esta alianza.',
+       ], 
+ fontSize: 12,
+ alignment: 'justify',
+ margin: [0, 10, 0, 80]
+},   
+
+{ text: nombre_tutor, bold: true, fontSize: 12,
+  alignment: 'center',
+  margin: [0, 0, 0, 0] },
+{ text: cedula_tutor, bold: true, fontSize: 12,
+  alignment: 'center',
+  margin: [0, 0, 0, 0] },
+{ text: cargo_tutor, bold: true, fontSize: 12,
+  alignment: 'center',
+  margin: [0, 0, 0, 0] },
+
+{ text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+  alignment: 'right',
+  margin: [0, 10, 0, 0] },
+
+   // QUINTA PAG
+
+   { text: ' ', pageBreak: 'after' }, 
+
 
   ]
   
@@ -12398,7 +12549,10 @@ for (var i = 1; i <= cantidad_integrantes; i++) {
 <ul>
   <li>Carta de Aprobacion de Induccion</li>
   <li>Solicitud de Autorizacion Realizar Proyecto</li>
+  <li>Carta al Tutor</li>
+  <li>Carta Aceptacion de Servicio Comunitario</li>
 </ul>
+
 
 
 
@@ -12489,17 +12643,6 @@ for (var i = 1; i <= cantidad_integrantes; i++) {
     </div>
 
     <div id="integrantes_container"></div>
-
-
-<!--
-        <div class="form-group">
-            <label for="email_usuario">EMAIL</label>
-            <input onkeyup="minusc(this);" type="email" pattern="[a-zA-Z0-9]{0,}([.]?[_.a-zA-Z0-9]{1,})[@](gmail.com|hotmail.com|yahoo.com|yahoo.es|outlook.es|outlook.com|hotmail.es|cantv.net|cantv.com)" title="Debe utilizar solo correos gmail, yahoo, hotmail o cantv" class="form-control" id="email_usuario" aria-describedby="email_usuario" placeholder="Ingrese su Email" name="email_usuario" value="" required>
-            <div class="invalid-feedback">Debe indicar el Email del Usuario, solo se admiten correos gmail, yahoo, hotmail o cantv. <br><b>RECOMENDAMOS AMPLIAMENTE USAR CORREOS <a href="http://www.gmail.com" target="_BLANK">GMAIL</a></b></div>
-        </div>
--->
-
-
 
         <input class="btn btn-info" type="submit" value="Generar PDF">
       </div>
@@ -12637,6 +12780,25 @@ document.getElementById('cantidad_integrantes').addEventListener('input', functi
   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+  <script>
+
+    function llenarFormulario() {
+      // Rellenar los campos restantes
+      document.getElementById("nombre_ind").value = "JOSE HERRERA";
+      document.getElementById("cedula_ind").value = "V-12345678";
+      document.getElementById("titulo_proyecto").value = "LOREM IPSUM LOREM IPSUM LOREM IPSUM ";
+      document.getElementById("descripcion_proyecto").value = "LOREM IPSUM, DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. MINUS, LABORE OFFICIA? PERFERENDIS MINUS DICTA MOLESTIAE APERIAM NULLA VOLUPTATIBUS DIGNISSIMOS ALIQUAM, NIHIL RECUSANDAE QUIBUSDAM SED UNDE TEMPORA EAQUE FACILIS IPSAM QUAS!";
+      document.getElementById("lugar_de_su_servicio").value = "LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM";
+      document.getElementById("nombre_tutor").value = "CUALQUIER NOMBRE";
+      document.getElementById("cedula_tutor").value = "V-12345678";
+      document.getElementById("cargo_tutor").value = "LOREM IPSUM LOREM IPSUMLOREM IPSUM";
+    }
+
+    document.addEventListener('DOMContentLoaded', llenarFormulario);
+    
+    </script>
 
 </body>
 </html>
