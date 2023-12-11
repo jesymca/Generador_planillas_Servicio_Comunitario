@@ -29,16 +29,44 @@ let mes = meses[fecha.getMonth()];
 let mesnumero = fecha.getMonth() + 1; // Los meses en JavaScript empiezan desde 0
 
 // Crear la cadena de texto con la fecha
-let expide = `Constancia que se expide a los ${dia} días del mes ${mes} del año ${ano}`;
+let expide = `Constancia que se expide en Puerto Cabello a los ${dia} días del mes ${mes} del año ${ano}`;
 let fechaact = `${dia}/${mesnumero}/${ano}`;
 
 // Variables de Personal de Servicio Comunitario
 var nombreCoordServicioCominitario = 'PITRE MATA JOKAJANNYS DEL VALLE';
 var cedulaCoordServicioCominitario = 'V-13956073';
-var cargoCoordServicioCominitario = 'Coordinador(a) General de Servicio Comunitario de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC)';
+var cargoCoordServicioCominitario = 'COORDINADOR(A) GENERAL DE SERVICIO COMUNITARIO DE LA UNIVERSIDAD POLITÉCNICA TERRITORIAL DE PUERTO CABELLO (UPTPC)';
 
 // LOGO
 var logouptpc = 'data:image/jpg;base64,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zzzzzzyW4wwzce4www7MYwwwwwwwx4oMknzzzzzzzzzzzzzzzzzz8AAAC/8AAAAAE1pAAAAAAAAN18z9888888888888888888fOOOKwgOOOOIbOOOOOOOOOpTzKh8888888888888888880999/lc9999pt+888888803NNXs888888888888888888hBBBK/jBBBBG/wAMMM/NP+OOMozNPPPMNPPPPPPPPPPPPPKwQQc/KQQQQfvPhl1kK32GvfVWbtCYySovPPPPPPPPPPOAQQQePywQQQbf74dil6R7iLVV2VUKkol+vPPPPPPPPPPFTjjjnqwggggm/wA+270526377QYEEGGHF0DzzzzzzzzzzyMMMMPKMIIIIdb/AP8A/wD/AP8A/wD/APogh8888888888888888888PMMMMMMMMMMZf/8A/wD/AP8A/wD/AP4sa8888888888888888888889999999999y/8A/wD/AP8A/wD/AP6gx8888888888888888888888mNOOOOEAAUn//AP8A/wD/AP8AvmjrzzzzzzzzzzzzzzzzzzzzzzzwTzzzwGjXf/8A/wD/AP8A8pwaF8888888888888888888888888888888MRVnGKG1vGAx8888888888888888888888888888888888888ORBhM8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888//EAAL/2gAMAwEAAgADAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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';
+
+function getHeaderTable() {
+  return {
+    table: {
+      widths: ['auto', '*'],
+      body: [
+        [
+          {
+            image: logouptpc,
+            width: 100,
+            height: 100,
+            alignment: 'top'
+          },
+          [
+            { text: 'República Bolivariana de Venezuela', fontSize: 14, bold: true },
+            { text: 'Universidad Politécnica Territorial de Puerto Cabello', fontSize: 14, bold: true },
+            { text: 'Vicerrectorado Académico', fontSize: 14, bold: true },
+            { text: 'Coordinación General de Servicio Comunitario', fontSize: 14, bold: true }
+          ]
+        ]
+      ]
+    },
+    layout: 'noBorders'
+  };
+}
+
+
+
 </script>
 
 <style>
@@ -12133,33 +12161,62 @@ $(document).ready(function() {
     var nombre_tutor = $('#nombre_tutor').val(); 
     var cedula_tutor = $('#cedula_tutor').val(); 
     var cargo_tutor = $('#cargo_tutor').val();
-    var cantidad_integrantes = $('#cantidad_integrantes').val();
+    var horas_proyecto = $('#horas_proyecto').val();
+    var fecha_inicio = $('#fecha_inicio').val();
+    var fecha_finalizacion = $('#fecha_finalizacion').val();
+    // var titulo_al_que_opta = $('#titulo_al_que_opta').val();
 
+    let titulo_al_que_opta = getTitulo(grado, carrera);
+   
+
+    function getTitulo(grado, carrera) {
+  let titulo_al_que_opta;
+
+  if (grado === "TRAYECTO 1" || grado === "TRAYECTO 2" || grado === "TRAYECTO 3" || grado === "PRIMER SEMESTRE" || grado === "SEGUNDO SEMESTRE" || grado === "TERCER SEMESTRE" || grado === "CUARTO SEMESTRE") {
+    titulo_al_que_opta = "TECNICO SUPERIOR UNIVERSITARIO EN";
+  } else {
+    titulo_al_que_opta = "INGENIERIA EN";
+  }
+
+  if ((carrera === "TURISMO" || carrera === "DISTRIBUCIÓN Y LOGÍSTICA") && !(grado === "TRAYECTO 1" || grado === "TRAYECTO 2" || grado === "TRAYECTO 3" || grado === "PRIMER SEMESTRE" || grado === "SEGUNDO SEMESTRE" || grado === "TERCER SEMESTRE" || grado === "CUARTO SEMESTRE")) {
+    titulo_al_que_opta = "LICENCIATURA EN";
+  }
+
+  return titulo_al_que_opta;
+}
+    
+
+
+
+    
+    function getIntegrantes() {
+    var cantidad_integrantes = $('#cantidad_integrantes').val();
     var integrantes = {};
 
-for (var i = 1; i <= cantidad_integrantes; i++) {
-    integrantes['nombre_integrante_' + i] = $('#nombre_integrante_' + i).val();
-    integrantes['cedula_integrante_' + i] = $('#cedula_integrante_' + i).val();
+    for (var i = 1; i <= cantidad_integrantes; i++) {
+        integrantes['nombre_integrante_' + i] = $('#nombre_integrante_' + i).val();
+        integrantes['cedula_integrante_' + i] = $('#cedula_integrante_' + i).val();
+    }
+
+    var body_integrantes = [
+        [{text: 'Nombre y Apellido', bold: true, alignment: 'center'}, {text: 'Cedula', bold: true, alignment: 'center'}, {text: 'Firma', bold: true, alignment: 'center'}]
+    ];
+    var body_integrantes_b = [
+        [{text: 'Nombre y Apellido', bold: true, alignment: 'center'}, {text: 'Cedula', bold: true, alignment: 'center'}]
+    ];
+
+    for (var i = 1; i <= cantidad_integrantes; i++) {
+        var nombre = integrantes['nombre_integrante_' + i];
+        var cedula = integrantes['cedula_integrante_' + i];
+        body_integrantes.push([nombre, cedula, '']);
+        body_integrantes_b.push([nombre, cedula]);
+    }
+
+    return {
+        body_integrantes: JSON.parse(JSON.stringify(body_integrantes)),
+        body_integrantes_b: JSON.parse(JSON.stringify(body_integrantes_b))
+    };
 }
-
-var body_integrantes = [
-    [{text: 'Nombre y Apellido', bold: true, alignment: 'center'}, {text: 'Cedula', bold: true, alignment: 'center'}, {text: 'Firma', bold: true, alignment: 'center'}]
-];
-var body_integrantes_b = [
-    [{text: 'Nombre y Apellido', bold: true, alignment: 'center'}, {text: 'Cedula', bold: true, alignment: 'center'}]
-];
-
-for (var i = 1; i <= cantidad_integrantes; i++) {
-    var nombre = integrantes['nombre_integrante_' + i];
-    var cedula = integrantes['cedula_integrante_' + i];
-    body_integrantes.push([nombre, cedula, '']);
-    body_integrantes_b.push([nombre, cedula]);
-}
-
-var body_integrantes = JSON.parse(JSON.stringify(body_integrantes));
-
-var body_integrantes_copy = JSON.parse(JSON.stringify(body_integrantes_b));
-var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
 
 //console.log(body_integrantes);
 //console.log(body_integrantes_b);
@@ -12168,242 +12225,481 @@ var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
     var tableBody = decodeHtml('\nLibro N° ______________\n\nFolio N° ______________\n\nLínea N° ______________\n\nFecha: _______/_______ /________');
 
     var docDefinition = {
-        pageSize: 'LETTER',
-        pageOrientation: 'portrait',
-        info: {
-  title: 'Planillas Proyecto Comunitario',
-  author: 'Jose Herrera Instagram @joher60',
-  date: new Date(),
-  time: new Date().toLocaleTimeString(),
-  documentNumber: '1000001',
-  version: '1.0',
-  subject: 'Planillas para proyecto comunitario',
-  keywords: 'planillas, proyecto, comunitario',
-  },
-      content: [
-      {
-      table: {
-        widths: ['auto', '*'],
-        body: [
-          [
-            {
-              image: logouptpc,
-              width: 100,
-              height: 100,
-              alignment: 'top'
-            },
-            [
-              { text: 'República Bolivariana de Venezuela', fontSize: 14, bold: true },
-              { text: 'Universidad Politécnica Territorial de Puerto Cabello', fontSize: 14, bold: true },
-              { text: 'Vicerrectorado Académico', fontSize: 14, bold: true },
-              { text: 'Coordinación General de Servicio Comunitario', fontSize: 14, bold: true }
-            ]
-          ]
-        ]
+      pageSize: 'LETTER',
+      pageOrientation: 'portrait',
+      info: {
+        title: 'Planillas Proyecto Comunitario',
+        author: 'Jose Herrera Instagram @joher60',
+        date: new Date(),
+        time: new Date().toLocaleTimeString(),
+        documentNumber: '1000001',
+        version: '1.0',
+        subject: 'Planillas para proyecto comunitario',
+        keywords: 'planillas, proyecto, comunitario',
       },
-      layout: 'noBorders'
-    },
+      content: [
+
+        getHeaderTable(),
+
         { text: 'CARTA DE APROBACIÓN DE INDUCCIÓN', fontSize: 16, alignment: 'center', bold: true },
         { text: 'Por medio de la presente,', fontSize: 12, margin: [0, 20, 0, 0] },
         {
-  text: [
-    {text: '_     ', color: 'white'},
-    'Yo, ',
-    { text: nombreCoordServicioCominitario, bold: true },
-    ' portador/a de la C.I. ',
-    { text: cedulaCoordServicioCominitario, bold: true },
-    ' en mi condición de ',
-    { text: cargoCoordServicioCominitario, bold: true },
-    ' hago constar por medio de la presente que él ciudadano bachiller, ',
-    { text: nombre_ind, bold: true },
-     ', portador de la C.I. ',
-     { text: cedula_ind, bold: true },
-    ' quien pertenece  a nuestra casa de estudios y es cursante del ',
-    { text: grado, bold: true },
-    ' ',
-    { text: periodoVisible, bold: true },
-    ' de ',
-    { text: programa, bold: true },
-    ' ',
-    { text: carrera, bold: true },
-    ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC) ha cumplido con el requisito de inducción según lo establecido en el  Art.12 de la LEY DEL SERVICIO COMUNITARIO DEL ESTUDIANTE DE EDUCACIÓN SUPERIOR (LSCEES), que establece: ',
-    "\n",
-  ],
-  fontSize: 12,
-  alignment: 'justify',
-  margin: [0, 20, 0, 0]
-},
-    "\n",
-    { 
-      text: [
-        { 
-          text: '"...las instituciones de educación superior, en coordinación, deben programar seminarios, cursos o talleres sobre la realidad comunitaria, a fin de capacitar al personal académico y estudiantil para la ejecución del servicio comunitario con la finalidad de preparar a los coordinadores, asesores y estudiantes en sus responsabilidades, metas y propósitos para la realización del servicio comunitario".', 
-          italics: true
-        }
-      ],
-      fontSize: 12,
-      alignment: 'justify',
-      margin: [30, 0, 30, 0] // Ajusta estos valores según tus necesidades
-    },
-    { 
-      text: 'En dicha inducción tuvo una duración de 12 horas académicas y se abordó:',
-      fontSize: 12,
-      alignment: 'justify',
-      margin: [0, 20, 0, 0]
-    },
-    {
-      ul: [
-        'Conocer Leyes, y normativa involucrada en el servicio comunitario.',
-        'Diagnostico y presentación de la propuesta.',
-        'Como Llevar a la practica la propuesta planteada.',
-      ],
-      fontSize: 12,
-      alignment: 'justify',
-      margin: [20, 0, 20, 0] // Ajusta estos valores según tus necesidades
-    },
-    {
-    text: expide,
-    fontSize: 12,
-    alignment: 'justify',
-    margin: [0, 15, 0, 0]
-    },
-    {
-      table: {
-        widths: [180],
-        body: [[tableBody]]
-      },
-      margin: [300, 20, 0, 0]
-    },
-    {
-    text: 'Coordinación general del Servicio Comunitario',
-    fontSize: 12,
-    alignment: 'center',
-    margin: [0, 60, 0, 0]
-    },
-    // SEGUNDA PAG
-    { text: ' ', pageBreak: 'after' }, 
-    {
-      table: {
-        widths: ['auto', '*'],
-        body: [
-          [
+          text: [
+            { text: '_     ', color: 'white' },
+            'Yo, ',
+            { text: nombreCoordServicioCominitario, bold: true },
+            ' portador/a de la C.I. ',
+            { text: cedulaCoordServicioCominitario, bold: true },
+            ' en mi condición de ',
+            { text: cargoCoordServicioCominitario, bold: true },
+            ' hago constar por medio de la presente que él ciudadano bachiller, ',
+            { text: nombre_ind, bold: true },
+            ', portador de la C.I. ',
+            { text: cedula_ind, bold: true },
+            ' quien pertenece  a nuestra casa de estudios y es cursante del ',
+            { text: grado, bold: true },
+            ' ',
+            { text: periodoVisible, bold: true },
+            ' de ',
+            { text: programa, bold: true },
+            ' ',
+            { text: carrera, bold: true },
+            ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC) ha cumplido con el requisito de inducción según lo establecido en el  Art.12 de la LEY DEL SERVICIO COMUNITARIO DEL ESTUDIANTE DE EDUCACIÓN SUPERIOR (LSCEES), que establece: ',
+            "\n",
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 20, 0, 0]
+        },
+        "\n",
+        {
+          text: [
             {
-              image: logouptpc,
-              width: 100,
-              height: 100,
-              alignment: 'top'
-            },
-            [
-              { text: 'República Bolivariana de Venezuela', fontSize: 14, bold: true },
-              { text: 'Universidad Politécnica Territorial de Puerto Cabello', fontSize: 14, bold: true },
-              { text: 'Vicerrectorado Académico', fontSize: 14, bold: true },
-              { text: 'Coordinación General de Servicio Comunitario', fontSize: 14, bold: true }
-            ]
-          ]
-        ]
-      },
-      layout: 'noBorders'
-    },
+              text: '"...las instituciones de educación superior, en coordinación, deben programar seminarios, cursos o talleres sobre la realidad comunitaria, a fin de capacitar al personal académico y estudiantil para la ejecución del servicio comunitario con la finalidad de preparar a los coordinadores, asesores y estudiantes en sus responsabilidades, metas y propósitos para la realización del servicio comunitario".',
+              italics: true
+            }
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [30, 0, 30, 0] // Ajusta estos valores según tus necesidades
+        },
+        {
+          text: 'En dicha inducción tuvo una duración de 12 horas académicas y se abordó:',
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 20, 0, 0]
+        },
+        {
+          ul: [
+            'Conocer Leyes, y normativa involucrada en el servicio comunitario.',
+            'Diagnostico y presentación de la propuesta.',
+            'Como Llevar a la practica la propuesta planteada.',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [20, 0, 20, 0] // Ajusta estos valores según tus necesidades
+        },
+        {
+          text: expide,
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 15, 0, 0]
+        },
+        {
+          table: {
+            widths: [180],
+            body: [[tableBody]]
+          },
+          margin: [300, 20, 0, 0]
+        },
+        {
+          text: 'Coordinación general del Servicio Comunitario',
+          fontSize: 12,
+          alignment: 'center',
+          margin: [0, 60, 0, 0]
+        },
+        // SEGUNDA PAG
+        { text: ' ', pageBreak: 'after' },
+
+        getHeaderTable(),
+
         { text: 'SOLICITUD DE AUTORIZACION REALIZAR PROYECTO', fontSize: 16, alignment: 'center', bold: true },
 
-      { text: [
-    {text: '_     ', color: 'white'},
-    'Prof. ',
-    { text: nombreCoordServicioCominitario, bold: true },
-       "\n",
-    {text: '_     ', color: 'white'},
-    { text: cargoCoordServicioCominitario, bold: true },
-    "\n\n",
-    {text: '_     ', color: 'white'},
-    'Cordial saludo, por medio de la presente nos dirigimos ante su coordinación, con la finalidad de solicitar nos autorice a realizar el proyecto en conjunto, el cual se titula: ',
-    { text: titulo_proyecto, bold: true },
-     ' que será ejecutado en: ',
-     { text: lugar_de_su_servicio, bold: true },
-    ', bajo la tutoría del Prof. ',
-    { text: nombre_tutor, bold: true },
-    ' ',
-    { text: cargo_tutor, bold: true },
-    '.',
-     "\n\n",
-    {text: '_     ', color: 'white'},
-    'En dicho proyecto se realizara: ',
-    { text: descripcion_proyecto, bold: true },
-     "\n\n",
-    {text: '_     ', color: 'white'},
-    'Sin otro al que hacer referencia, nos despedimos de usted a la espera de su pronta respuesta.',
-    "\n\n",
-  ], 
-  fontSize: 12,
-  alignment: 'justify',
-  margin: [0, 20, 0, 20]
-},
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Prof. ',
+            { text: nombreCoordServicioCominitario, bold: true },
+            "\n",
+            { text: '_     ', color: 'white' },
+            { text: cargoCoordServicioCominitario, bold: true },
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Cordial saludo, por medio de la presente nos dirigimos ante su coordinación, con la finalidad de solicitar nos autorice a realizar el proyecto en conjunto, el cual se titula: ',
+            { text: titulo_proyecto, bold: true },
+            ' que será ejecutado en: ',
+            { text: lugar_de_su_servicio, bold: true },
+            ', bajo la tutoría del Prof. ',
+            { text: nombre_tutor, bold: true },
+            ' ',
+            { text: cargo_tutor, bold: true },
+            '.',
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'En dicho proyecto se realizara: ',
+            { text: descripcion_proyecto, bold: true },
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Sin otro al que hacer referencia, nos despedimos de usted a la espera de su pronta respuesta.',
+            "\n\n",
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 20, 0, 20]
+        },
 
-{
-            table: {
-                headerRows: 1,
-                widths: ['*', '*', '*'],
-                body: body_integrantes
-            }
+        {
+          table: {
+            headerRows: 1,
+            widths: ['70%', '15%', '15%'],
+            body: getIntegrantes().body_integrantes,
+          }
         },
         "\n\n",
-     
+
         'Solicitud que se hace en fecha: ' + fechaact,
         "\n\n\n\n\n",
         'Recibido por: ____________________________________',
 
         // TERCERA PAG
-    { text: ' ', pageBreak: 'after' }, 
-    {
-      table: {
-        widths: ['auto', '*'],
-        body: [
-          [
-            {
-              image: logouptpc,
-              width: 100,
-              height: 100,
-              alignment: 'top'
-            },
-            [
-              { text: 'República Bolivariana de Venezuela', fontSize: 14, bold: true },
-              { text: 'Universidad Politécnica Territorial de Puerto Cabello', fontSize: 14, bold: true },
-              { text: 'Vicerrectorado Académico', fontSize: 14, bold: true },
-              { text: 'Coordinación General de Servicio Comunitario', fontSize: 14, bold: true }
-            ]
-          ]
-        ]
-      },
-      layout: 'noBorders'
-    },
-    { text: 'CARTA AL TUTOR', fontSize: 16, alignment: 'center', bold: true },
+        { text: ' ', pageBreak: 'after' },
 
-    { text: [
-   
-    'Ciudadano (a). ',
-    { text: nombre_tutor, bold: true },
-       "\n",
-      'Presente.-',
-    "\n\n",
-    {text: '_     ', color: 'white'},
-    'Reciba un cordial saludo, se tiene el agrado de dirigirse a usted, en la oportunidad de postular a los bachilleres que se mencionan a continuación:',
+        getHeaderTable(),
 
-    ], 
-  fontSize: 12,
-  alignment: 'justify',
-  margin: [0, 10, 0, 10]
-},
+        { text: 'CARTA AL TUTOR', fontSize: 16, alignment: 'center', bold: true },
 
-    {
-            table: {
-                headerRows: 1,
-                widths: ['*', '*'],
-                body: body_integrantes_copy,
-                alignment: 'center'
-            }
+        {
+          text: [
+
+            'Ciudadano (a). ',
+            { text: nombre_tutor, bold: true },
+            "\n",
+            'Presente.-',
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Reciba un cordial saludo, se tiene el agrado de dirigirse a usted, en la oportunidad de postular a los bachilleres que se mencionan a continuación:',
+
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
         },
-{ text: [
+
+        {
+          table: {
+            headerRows: 1,
+            widths: ['85%', '15%'],
+            body: getIntegrantes().body_integrantes_b,
+            alignment: 'center'
+          }
+        },
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Quienes son cursantes del',
+            { text: grado, bold: true },
+            ' ',
+            { text: periodoVisible, bold: true },
+            ' de ',
+            { text: programa, bold: true },
+            ' ',
+            { text: carrera, bold: true },
+            ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC), para que puedan cumplir con sus 120 horas de su servicio comunitario, los mencionados estudiantes han cumplido con lo estipulado por la ley del servicio comunitario, artículos 12 y 16, y pretenden realizar un proyecto el cual esta titulado: ',
+            { text: titulo_proyecto, bold: true },
+            ' Y basado en: ',
+            { text: descripcion_proyecto, bold: true },
+            ' Por lo tanto se recurre a su buena disposición en recibir a los estudiantes y asignar a una persona guía para que cumplan con sus 120 horas dentro de su departamento; a fin de llevar a cabo su servicio comunitario digno de profesionales.',
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Sin otro particular quedo a la espera de su pronta y positiva respuesta me despido de usted. ',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 20, 0, 80]
+        },
+
+        {
+          text: nombreCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cedulaCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cargoCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 10, 0, 0]
+        },
+
+        // CUARTA PAG
+
+        { text: ' ', pageBreak: 'after' },
+
+        getHeaderTable(),
+
+        { text: 'CARTA DE ACEPTACIÓN DE SERVICIO COMUNITARIO', fontSize: 16, alignment: 'center', bold: true },
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Reciba un cordial saludo Prof. ',
+            { text: nombreCoordServicioCominitario, bold: true },
+            ' Portadora de la C.I.: ',
+            { text: cedulaCoordServicioCominitario, bold: true },
+            ' ',
+            { text: cargoCoordServicioCominitario, bold: true },
+            ' por medio de la presente, hacemos explícito nuestro interés de convertirnos en organización / proyecto receptor de estudiantes que deban cumplir con la Ley de Servicio Comunitario. Igualmente, manifestamos formalmente la ',
+            { text: 'ACEPTACION', bold: true },
+            ' de incorporación al ',
+            { text: lugar_de_su_servicio, bold: true },
+            ' a los prestadores de servicio comunitario que se mencionan a continuación: '
+
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
+        },
+        {
+          table: {
+            headerRows: 1,
+            widths: ['85%', '15%'],
+            body: getIntegrantes().body_integrantes_b,
+            alignment: 'center'
+          }
+        },
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Quienes comenzarán sus labores, según plan de actividades y metas previamente acordadas. Esperamos que la comunicación se mantenga fluida y nos comprometemos a facilitar las condiciones en las cuales trabajará el alumno en nuestro departamento oficina o espacio, y a asegurar un supervisor o asesor que oriente las visitas a campo y la ejecución de su plan de actividades y metas, así como monitorear el cumplimiento de las horas de servicio acordadas.',
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Sin otro particular al qué hacer referencia y esperando los frutos de esta alianza.',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 80]
+        },
+
+        {
+          text: nombre_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cedula_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cargo_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 10, 0, 0]
+        },
+
+        // QUINTA PAG
+
+        { text: ' ', pageBreak: 'after' },
+
+        getHeaderTable(),
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 0, 0, 0]
+        },
+
+        { text: 'APROBACIÓN DE LA PROPUESTA', fontSize: 16, alignment: 'center', bold: true },
+      
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Reciba un cordial saludo:',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
+        },
+
+        {
+          table: {
+            headerRows: 1,
+            widths: ['85%', '15%'],
+            body: getIntegrantes().body_integrantes_b,
+            alignment: 'center'
+          }
+        },
+
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Estimados estudiantes cursantes del ',
+            { text: grado, bold: true },
+            ' ',
+            { text: periodoVisible, bold: true },
+            ' de ',
+            { text: programa, bold: true },
+            ' ',
+            { text: carrera, bold: true },
+            ' sirva la presente en informar que les ha sido ',
+            { text: 'APROBADO SU PROPUESTA', bold: true },
+            ' de su proyecto titulado ',
+            { text: titulo_proyecto, bold: true },
+            ' en servicio comunitario. ',
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Sin otro particular al qué hacer referencia me despido de ustedes. ',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 80]
+        },
+
+        {
+          text: nombreCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cedulaCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cargoCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 10, 0, 0]
+        },
+
+        // SEXTA PAG
+
+        { text: ' ', pageBreak: 'after' },
+
+        getHeaderTable(),
+
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 0, 0, 10]
+        },
+        { text: 'APROBACIÓN DEL PROYECTO', fontSize: 16, alignment: 'center', bold: true },
+
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Reciba un cordial saludo:',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
+        },
+
+        {
+          table: {
+            headerRows: 1,
+            widths: ['85%', '15%'],
+            body: getIntegrantes().body_integrantes_b,
+            alignment: 'center'
+          }
+        },
+
+        {
+          text: [
+            { text: '_     ', color: 'white' },
+            'Estimados estudiantes cursantes del ',
+            { text: grado, bold: true },
+            ' ',
+            { text: periodoVisible, bold: true },
+            ' de ',
+            { text: programa, bold: true },
+            ' ',
+            { text: carrera, bold: true },
+            ' sirva la presente en informar que les ha sido ',
+            { text: 'APROBADO SU PROYECTO', bold: true },
+            ' titulado ',
+            { text: titulo_proyecto, bold: true },
+            ' en servicio comunitario. ',
+            "\n\n",
+            { text: '_     ', color: 'white' },
+            'Sin otro particular al qué hacer referencia me despido de ustedes. ',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 80]
+        },
+
+        {
+          text: nombreCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cedulaCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cargoCoordServicioCominitario, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 10, 0, 0]
+        },
+
+        // SEPTIMA PAG
+
+        { text: ' ', pageBreak: 'after' },
+
+        getHeaderTable(),
+
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 0, 0, 10]
+        },
+        { text: 'AUTORIZACIÓN PARA LA PRESENTACIÓN DE PROYECTO', fontSize: 16, alignment: 'center', bold: true },
+        {
+  text: [
     {text: '_     ', color: 'white'},
-    'Quienes son cursantes del',
+    'Reciba un cordial saludo; Profesor(a) ',
+    { text: nombreCoordServicioCominitario, bold: true },
+    ' portador/a de la C.I. ',
+    { text: cedulaCoordServicioCominitario, bold: true },
+    ' ',
+    { text: cargoCoordServicioCominitario, bold: true },
+    ' nosotros los abajo firmantes cursantes del ',
     { text: grado, bold: true },
     ' ',
     { text: periodoVisible, bold: true },
@@ -12411,122 +12707,318 @@ var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
     { text: programa, bold: true },
     ' ',
     { text: carrera, bold: true },
-    ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC), para que puedan cumplir con sus 120 horas de su servicio comunitario, los mencionados estudiantes han cumplido con lo estipulado por la ley del servicio comunitario, artículos 12 y 16, y pretenden realizar un proyecto el cual esta titulado: ',
+    ' informamos hemos cumplido con lo establecido en la Ley de servicio Comunitario y acudimos respetuosamente en solicitar la Autorización para la presentación de nuestro proyecto el cual tiene por título: ',
     { text: titulo_proyecto, bold: true },
-    ' Y basado en: ',
-    { text: descripcion_proyecto, bold: true },
-    ' Por lo tanto se recurre a su buena disposición en recibir a los estudiantes y asignar a una persona guía para que cumplan con sus 120 horas dentro de su departamento; a fin de llevar a cabo su servicio comunitario digno de profesionales.',
+    ' y fue ejecutado en los espacios de ',
+    { text: lugar_de_su_servicio, bold: true },
+    ' bajo la tutoria del profesor(a) ',
+    { text: nombre_tutor, bold: true },
+    ' portador de la C.I. ',
+    { text: cedula_tutor, bold: true },
+    ' en su cargo de ',
+    { text: cargo_tutor, bold: true },
     "\n\n",
     {text: '_     ', color: 'white'},
-    'Sin otro particular quedo a la espera de su pronta y positiva respuesta me despido de usted. ',
-  ], 
+    'Sin otro al que hacer referencia quedamos de usted.'
+  ],
+  fontSize: 12,
+  alignment: 'justify',
+  margin: [0, 20, 0, 10]
+},
+{
+          table: {
+            headerRows: 1,
+            widths: ['70%', '15%', '15%'],
+            body: getIntegrantes().body_integrantes,
+            alignment: 'center'
+          }
+        },
+
+        // OCTAVA PAG
+
+        { text: ' ', pageBreak: 'after' },
+
+getHeaderTable(),
+
+{
+  text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+  alignment: 'right',
+  margin: [0, 0, 0, 10]
+},
+{
+          text: [
+            'Ciudadano(a)  ',
+            { text: nombreCoordServicioCominitario, bold: true },
+            '\n',
+            { text: cargoCoordServicioCominitario, bold: true },
+            '\n',
+            'Presente.-',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
+        },
+{ text: 'CARTA ACEPTACIÓN TUTOR', fontSize: 16, alignment: 'center', bold: true },
+{
+          text: [
+            { text: '_     ', color: 'white' },
+            'Reciba un cordial saludo, Yo, ',
+            { text: nombre_tutor, bold: true },
+            ' portador/a de la C.I. ',
+            { text: cedula_tutor, bold: true },
+            ' en mi condición de ',
+            { text: cargo_tutor, bold: true },
+            ' por medio de la presente manifiesto que ',
+            { text: 'ACEPTO', bold: true },
+            ' la tutoría y me comprometo a ejercer mi rol como tutor que contempla la orientación, el acompañamiento y la supervisión a los estudiantes durante la prestación del servicio; del proyecto titulado ',
+            { text: titulo_proyecto, bold: true },
+            '.\n\n',
+            { text: '_     ', color: 'white' },
+            'Siendo los prestadores de servicio los siguientes estudiantes: ',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
+        },
+        {
+          table: {
+            headerRows: 1,
+            widths: ['85%', '15%'],
+            body: getIntegrantes().body_integrantes_b,
+            alignment: 'center'
+          }
+        },
+
+     {   text: [
+    {text: '_     ', color: 'white'},
+    'Quienes son cursantes del ',
+    { text: grado, bold: true },
+    ' ',
+    { text: periodoVisible, bold: true },
+    ' de ',
+    { text: programa, bold: true },
+    ' ',
+    { text: carrera, bold: true },
+    ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC). ',
+    "\n\n",
+    {text: '_     ', color: 'white'},
+    'Sin otro particular me despido de usted.'
+  ],
   fontSize: 12,
   alignment: 'justify',
   margin: [0, 20, 0, 80]
 },
+{
+          text: nombre_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cedula_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cargo_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
 
-{ text: nombreCoordServicioCominitario, bold: true, fontSize: 12,
-  alignment: 'center',
-  margin: [0, 0, 0, 0] },
-{ text: cedulaCoordServicioCominitario, bold: true, fontSize: 12,
-  alignment: 'center',
-  margin: [0, 0, 0, 0] },
-{ text: cargoCoordServicioCominitario, bold: true, fontSize: 12,
-  alignment: 'center',
-  margin: [0, 0, 0, 0] },
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 10, 0, 0]
+        },
 
-{ text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+  // NOVENA PAG
+
+        { text: ' ', pageBreak: 'after' },
+
+getHeaderTable(),
+
+{
+  text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
   alignment: 'right',
-  margin: [0, 10, 0, 0] },
-
-  // CUARTA PAG
-
-  { text: ' ', pageBreak: 'after' }, 
-
-  {
-      table: {
-        widths: ['auto', '*'],
-        body: [
-          [
-            {
-              image: logouptpc,
-              width: 100,
-              height: 100,
-              alignment: 'top'
-            },
-            [
-              { text: 'República Bolivariana de Venezuela', fontSize: 14, bold: true },
-              { text: 'Universidad Politécnica Territorial de Puerto Cabello', fontSize: 14, bold: true },
-              { text: 'Vicerrectorado Académico', fontSize: 14, bold: true },
-              { text: 'Coordinación General de Servicio Comunitario', fontSize: 14, bold: true }
-            ]
-          ]
-        ]
-      },
-      layout: 'noBorders'
-    },
-    { text: 'CARTA DE ACEPTACIÓN DE SERVICIO COMUNITARIO', fontSize: 16, alignment: 'center', bold: true },
-    { text: [
-   {text: '_     ', color: 'white'},
-   'Reciba un cordial saludo Prof. ',
-   { text: nombreCoordServicioCominitario, bold: true },
-   ' Portadora de la C.I.: ',
-   { text: cedulaCoordServicioCominitario, bold: true },
-   ' ',
-   { text: cargoCoordServicioCominitario, bold: true },
-   ' por medio de la presente, hacemos explícito nuestro interés de convertirnos en organización / proyecto receptor de estudiantes que deban cumplir con la Ley de Servicio Comunitario. Igualmente, manifestamos formalmente la ',
-   { text: 'ACEPTACION', bold: true },
-   ' de incorporación al ',
-   { text: lugar_de_su_servicio, bold: true },
-   ' a los prestadores de servicio comunitario que se mencionan a continuación: '
-
-   ], 
- fontSize: 12,
- alignment: 'justify',
- margin: [0, 10, 0, 10]
+  margin: [0, 0, 0, 10]
 },
 {
-            table: {
-                headerRows: 1,
-                widths: ['*', '*'],
-                body: body_integrantes_copy_2,
-                alignment: 'center'
-            }
+          text: [
+            'Ciudadano(a)  ',
+            { text: nombreCoordServicioCominitario, bold: true },
+            '\n',
+            { text: cargoCoordServicioCominitario, bold: true },
+            '\n',
+            'Presente.-',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
         },
-{ text: [
-        {text: '_     ', color: 'white'},
-        'Quienes comenzarán sus labores, según plan de actividades y metas previamente acordadas. Esperamos que la comunicación se mantenga fluida y nos comprometemos a facilitar las condiciones en las cuales trabajará el alumno en nuestro departamento oficina o espacio, y a asegurar un supervisor o asesor que oriente las visitas a campo y la ejecución de su plan de actividades y metas, así como monitorear el cumplimiento de las horas de servicio acordadas.',
-        "\n\n",
-        {text: '_     ', color: 'white'},
-       'Sin otro particular al qué hacer referencia y esperando los frutos de esta alianza.',
-       ], 
- fontSize: 12,
- alignment: 'justify',
- margin: [0, 10, 0, 80]
-},   
+{ text: 'CARTA APROBACION TUTOR', fontSize: 16, alignment: 'center', bold: true },
+{
+          text: [
+            { text: '_     ', color: 'white' },
+            'Reciba un cordial saludo, Yo, ',
+            { text: nombre_tutor, bold: true },
+            ' portador/a de la C.I. ',
+            { text: cedula_tutor, bold: true },
+            ' en mi condición de ',
+            { text: cargo_tutor, bold: true },
+            ' por medio de la presente expreso que he cumplido mi rol como tutor en la orientación, el acompañamiento y la supervisión a los estudiantes durante la prestación del servicio; del proyecto titulado ',
+            { text: titulo_proyecto, bold: true },
+            ' siendo los prestadores de servicio los siguientes estudiantes: ',
+            { text: 'ACEPTO', bold: true },
+            ' la tutoría y me comprometo a ejercer mi rol como tutor que contempla la orientación, el acompañamiento y la supervisión a los estudiantes durante la prestación del servicio; del proyecto titulado ',
+            { text: titulo_proyecto, bold: true },
+            '.\n\n',
+            { text: '_     ', color: 'white' },
+            'Siendo los prestadores de servicio los siguientes estudiantes: ',
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 10, 0, 10]
+        },
+        {
+          table: {
+            headerRows: 1,
+            widths: ['85%', '15%'],
+            body: getIntegrantes().body_integrantes_b,
+            alignment: 'center'
+          }
+        },
 
-{ text: nombre_tutor, bold: true, fontSize: 12,
-  alignment: 'center',
-  margin: [0, 0, 0, 0] },
-{ text: cedula_tutor, bold: true, fontSize: 12,
-  alignment: 'center',
-  margin: [0, 0, 0, 0] },
-{ text: cargo_tutor, bold: true, fontSize: 12,
-  alignment: 'center',
-  margin: [0, 0, 0, 0] },
+     {   text: [
+    {text: '_     ', color: 'white'},
+    'Quienes son cursantes del ',
+    { text: grado, bold: true },
+    ' ',
+    { text: periodoVisible, bold: true },
+    ' de ',
+    { text: programa, bold: true },
+    ' ',
+    { text: carrera, bold: true },
+    ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC). ',
+    "\n\n",
+    {text: '_     ', color: 'white'},
+    'Por tanto doy fe y manifiesto mi ',
+    {text: 'APROBACIÓN', bold: true }, 
+    ' al proyecto.',
+    "\n\n",
+    {text: '_     ', color: 'white'},
+    'Sin otro particular me despido de usted.'
+  ],
+  fontSize: 12,
+  alignment: 'justify',
+  margin: [0, 20, 0, 80]
+},
+{
+          text: nombre_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cedula_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: cargo_tutor, bold: true, fontSize: 12,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
 
-{ text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+        {
+          text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
+          alignment: 'right',
+          margin: [0, 10, 0, 0]
+        },
+
+         // DECIMA PAG
+
+         { text: ' ', pageBreak: 'after' },
+
+getHeaderTable(),
+
+{
+  text: 'Fecha: ' + fechaact, bold: true, fontSize: 12,
   alignment: 'right',
-  margin: [0, 10, 0, 0] },
+  margin: [0, 0, 0, 10]
+},
+{ text: 'CONSTANCIA DE SERVICIO COMUNITARIO', fontSize: 16, alignment: 'center', bold: true },
 
-   // QUINTA PAG
+{
+          text: [
+            { text: '_     ', color: 'white' },
+            'Por medio de la presente se hace constar que el o la ciudadano(a): ',
+            { text: nombre_ind, bold: true },
+            ', portador de la C.I. ',
+            { text: cedula_ind, bold: true },
+            ' quien pertenece  a nuestra casa de estudios y es cursante del ',
+            { text: grado, bold: true },
+            ' ',
+            { text: periodoVisible, bold: true },
+            ' de ',
+            { text: programa, bold: true },
+            ' ',
+            { text: carrera, bold: true },
+            ' de la Universidad Politécnica Territorial de Puerto Cabello (UPTPC) Municipio Puerto Cabello, del Estado Carabobo. Cumplió el ',
+            { text: 'SERVICIO COMUNITARIO', bold: true },
+            ' en la Universidad Politécnica Territorial de Puerto Cabello con el proyecto titulado: ',
+            { text: titulo_proyecto, bold: true },
+            ' el cual tuvo una duración de: ',
+            { text: horas_proyecto, bold: true },
+            ' Lapso de ejecución: desde: ',
+            { text: fecha_inicio, bold: true },
+            { text: fecha_finalizacion, bold: true },
+            ' De acuerdo a la Ley del Servicio Comunitario del Estudiante de Educación Superior Gaceta Oficial N° 38.272 del 14 de septiembre de 2005. Como requisito de egreso para optar al Título de: ',
+            { text: titulo_al_que_opta, bold: true },
+            ' ',
+            { text: carrera, bold: true },
+            '.\n\n',
+            { text: '_     ', color: 'white' },
+            expide,
+          ],
+          fontSize: 12,
+          alignment: 'justify',
+          margin: [0, 20, 0, 120]
+        },
 
-   { text: ' ', pageBreak: 'after' }, 
+
+        {
+		
+			table: {
+				headerRows: 1,
+        widths: ['50%', '50%'],
+				body: [
+					[{text: nombre_tutor, bold: true, fontSize: 12,
+              alignment: 'center',
+              margin: [0, 0, 0, 0]
+            },{text: nombreCoordServicioCominitario, bold: true, fontSize: 12,
+              alignment: 'center',
+              margin: [0, 0, 0, 0]
+            }],
+					[{text: cedula_tutor, bold: true, fontSize: 12,
+              alignment: 'center',
+              margin: [0, 0, 0, 0]
+            }, {text: cedulaCoordServicioCominitario, bold: true, fontSize: 12,
+              alignment: 'center',
+              margin: [0, 0, 0, 0]
+            }],
+					[{text: cargo_tutor, bold: true, fontSize: 12,
+              alignment: 'center',
+              margin: [0, 0, 0, 0]
+            }, {text: cargoCoordServicioCominitario, bold: true, fontSize: 12,
+              alignment: 'center',
+              margin: [0, 0, 0, 0]
+            }],
+				]
+			},
+			layout: 'noBorders'
+		},
 
 
-  ]
-  
-};
+      ] // FIN DE CONTENIDO
+    }; // CIERRE DE VARIABLE QUE VA AL PDF
 
     pdfMake.createPdf(docDefinition).getDataUrl(function(dataUrl) {
       // Crea un elemento iframe para visualizar el PDF
@@ -12550,7 +13042,13 @@ var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
   <li>Carta de Aprobacion de Induccion</li>
   <li>Solicitud de Autorizacion Realizar Proyecto</li>
   <li>Carta al Tutor</li>
-  <li>Carta Aceptacion de Servicio Comunitario</li>
+  <li>Carta aceptacion de servicio comunitario</li>
+  <li>Aprobación de la propuesta  </li>
+  <li>Aprobación de Proyecto</li>
+  <li>Autorización para la presentación de proyecto</li>
+  <li>Carta aceptación tutor</li>
+  <li>Carta aprobacion tutor</li>
+  <li>Constancia de servicio comunitario</li>
 </ul>
 
 
@@ -12614,8 +13112,8 @@ var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
 
       <div class="form-group mb-3">
         <label for="lugar_de_su_servicio">LUGAR DE EJECUCION DE SU PROYECTO</label>
-        <input onkeyup="mayus(this);" type="text" name="lugar_de_su_servicio" id="lugar_de_su_servicio" placeholder="Indique el lugar donde ejecutara su proyecto" class="form-control" required>
-        <div class="invalid-feedback">Escriba el lugar donde ejecutara su proyecto</div>
+        <input onkeyup="mayus(this);" pattern="^(LA|EL) [a-zA-Z ]+" type="text" name="lugar_de_su_servicio" id="lugar_de_su_servicio" placeholder="Indique el lugar donde ejecutara su proyecto" class="form-control" required>
+        <div class="invalid-feedback">Escriba el lugar donde ejecutara su proyecto <br><b>EJEMPLO: <br> EL DEPARTAMENTO DE BIBLIOTECA<br>LA OFICINA DE RECURSOS HUMANOS </b></div>
     </div>
     
     <div class="form-group mb-3">
@@ -12643,6 +13141,31 @@ var body_integrantes_copy_2 = JSON.parse(JSON.stringify(body_integrantes_b));
     </div>
 
     <div id="integrantes_container"></div>
+
+    <div class="form-group mb-3">
+        <label for="horas_proyecto">CANTIDAD DE HORAS DE SU PROYECTO</label>
+        <input type="number" name="horas_proyecto" id="horas_proyecto" placeholder="Indique la cantidad de horas de su proyecto" class="form-control">
+        <div class="invalid-feedback">Escriba la cantidad de horas de su proyecto</div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="fecha_inicio">FECHA DE INICIO</label>
+      <input type="date" name="fecha_inicio" id="fecha_inicio" placeholder="Indique la fecha de inicio" class="form-control">
+      <div class="invalid-feedback">Escriba la fecha de inicio</div>
+  </div>
+  <div class="form-group mb-3">
+    <label for="fecha_finalizacion">FECHA DE FINALIZACION</label>
+    <input type="date" name="fecha_finalizacion" id="fecha_finalizacion" placeholder="Indique la fecha de finalizacion" class="form-control">
+    <div class="invalid-feedback">Escriba la fecha de finalizacion</div>
+</div>
+<!--
+<div class="form-group mb-3">
+  <label for="titulo_al_que_opta">TITULO AL QUE OPTA</label>
+  <input onkeyup="mayus(this);" type="text" name="titulo_al_que_opta" id="titulo_al_que_opta" placeholder="Indique el titulo al que opta" class="form-control" required>
+  <div class="invalid-feedback">Escriba el titulo al que opta.<br><b>Ejemplo:<br>TECNICO SUPERIOR UNIVERSITARIO EN INFORMATICA<br>INGENIERO EN MECANICA INDUSTRIAL</b></div>
+</div>
+-->
+
 
         <input class="btn btn-info" type="submit" value="Generar PDF">
       </div>
@@ -12788,17 +13311,19 @@ document.getElementById('cantidad_integrantes').addEventListener('input', functi
       // Rellenar los campos restantes
       document.getElementById("nombre_ind").value = "JOSE HERRERA";
       document.getElementById("cedula_ind").value = "V-12345678";
-      document.getElementById("titulo_proyecto").value = "LOREM IPSUM LOREM IPSUM LOREM IPSUM ";
-      document.getElementById("descripcion_proyecto").value = "LOREM IPSUM, DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. MINUS, LABORE OFFICIA? PERFERENDIS MINUS DICTA MOLESTIAE APERIAM NULLA VOLUPTATIBUS DIGNISSIMOS ALIQUAM, NIHIL RECUSANDAE QUIBUSDAM SED UNDE TEMPORA EAQUE FACILIS IPSAM QUAS!";
-      document.getElementById("lugar_de_su_servicio").value = "LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM";
+      document.getElementById("titulo_proyecto").value = "DISEÑAR UN MAPA WEB EN SVG";
+      document.getElementById("descripcion_proyecto").value = "ELABORAR UN MAPA CON CARACTERISTICAS DE GEOLOCALIZACION EN TIEMPO DE EJECUCION DESDE CUALQUIER TERMINAL";
+      document.getElementById("lugar_de_su_servicio").value = "EL DEPARTAMENTO DE INFORMATICA DE LA UPTPC";
       document.getElementById("nombre_tutor").value = "CUALQUIER NOMBRE";
       document.getElementById("cedula_tutor").value = "V-12345678";
-      document.getElementById("cargo_tutor").value = "LOREM IPSUM LOREM IPSUMLOREM IPSUM";
+      document.getElementById("cargo_tutor").value = "JEFE DE LABORATORIO DE TELEMATICA";
     }
 
     document.addEventListener('DOMContentLoaded', llenarFormulario);
     
     </script>
+
+   
 
 </body>
 </html>
