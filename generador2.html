@@ -12967,7 +12967,7 @@ getHeaderTable(),
             { text: titulo_proyecto, bold: true },
             ' el cual tuvo una duración de: ',
             { text: horas_proyecto, bold: true },
-            ' Lapso de ejecución: desde: ',
+            ' Horas de lapso de ejecución: desde: ',
             { text: fecha_inicio, bold: true },
             { text: fecha_finalizacion, bold: true },
             ' De acuerdo a la Ley del Servicio Comunitario del Estudiante de Educación Superior Gaceta Oficial N° 38.272 del 14 de septiembre de 2005. Como requisito de egreso para optar al Título de: ',
@@ -13060,7 +13060,7 @@ getHeaderTable(),
 
         <div class="form-group mb-3">
             <label for="nombre_ind">NOMBRE COMPLETO</label>
-            <input pattern="[A-Z ]{7,50}" onkeyup="mayus(this);" type="text" name="nombre_ind" id="nombre_ind" placeholder="Indique su Nombre" class="form-control" required>
+            <input pattern="[A-ZÁÉÍÓÚ ]{7,50}" onkeyup="mayus(this);" type="text" name="nombre_ind" id="nombre_ind" placeholder="Indique su Nombre" class="form-control" required>
             <div class="invalid-feedback">Debe indicar su NOMBRE Y APELLIDO COMPLETO. <br><b>FAVOR ESCRIBA PRIMERO SU NOMBRE Y LUEGO EL APELLIDO</b></div>
         </div>
 
@@ -13100,25 +13100,25 @@ getHeaderTable(),
 
         <div class="form-group mb-3">
           <label for="titulo_proyecto">TITULO DE SU PROYECTO</label>
-          <input onkeyup="mayus(this);" type="text" name="titulo_proyecto" id="titulo_proyecto" placeholder="Indique el titulo de su proyecto" class="form-control" required>
+          <input onkeyup="mayus(this);" type="text" pattern="[A-ZÁÉÍÓÚ ]{10,100}" name="titulo_proyecto" id="titulo_proyecto" placeholder="Indique el titulo de su proyecto" class="form-control" required>
           <div class="invalid-feedback">Escriba el titulo de su proyecto</div>
       </div>
 
       <div class="form-group mb-3">
         <label for="descripcion_proyecto">DESCRIPCION DE SU PROYECTO</label>
-        <input onkeyup="mayus(this);" type="text" name="descripcion_proyecto" id="descripcion_proyecto" placeholder="Indique de que trata su proyecto" class="form-control" required>
+        <input onkeyup="mayus(this);" pattern="[A-ZÁÉÍÓÚ ]{20,200}" type="text" name="descripcion_proyecto" id="descripcion_proyecto" placeholder="Indique de que trata su proyecto" class="form-control" required>
         <div class="invalid-feedback">Escriba de que trata su proyecto</div>
     </div>
 
       <div class="form-group mb-3">
         <label for="lugar_de_su_servicio">LUGAR DE EJECUCION DE SU PROYECTO</label>
-        <input onkeyup="mayus(this);" pattern="^(LA|EL) [a-zA-Z ]+" type="text" name="lugar_de_su_servicio" id="lugar_de_su_servicio" placeholder="Indique el lugar donde ejecutara su proyecto" class="form-control" required>
-        <div class="invalid-feedback">Escriba el lugar donde ejecutara su proyecto <br><b>EJEMPLO: <br> EL DEPARTAMENTO DE BIBLIOTECA<br>LA OFICINA DE RECURSOS HUMANOS </b></div>
+        <input onkeyup="mayus(this);" pattern="^(LA|EL) [a-zA-ZÁÉÍÓÚ ]{10,200}" type="text" name="lugar_de_su_servicio" id="lugar_de_su_servicio" placeholder="Indique el lugar donde ejecutara su proyecto" class="form-control" required>
+        <div class="invalid-feedback">Escriba el lugar donde ejecutara su proyecto debe empezar con el uso de cualquier pronombre EL o LA <br><b>EJEMPLO: <br> EL DEPARTAMENTO DE BIBLIOTECA<br>LA OFICINA DE RECURSOS HUMANOS </b></div>
     </div>
     
     <div class="form-group mb-3">
         <label for="nombre_tutor">NOMBRE DE SU TUTOR</label>
-        <input onkeyup="mayus(this);" type="text" name="nombre_tutor" id="nombre_tutor" placeholder="Indique el nombre completo de su Tutor" class="form-control" required>
+        <input onkeyup="mayus(this);" pattern="[A-ZÁÉÍÓÚ ]{7,50}" type="text" name="nombre_tutor" id="nombre_tutor" placeholder="Indique el nombre completo de su Tutor" class="form-control" required>
         <div class="invalid-feedback">Escriba el nombre completo de su Tutor</div>
     </div>
 
@@ -13130,7 +13130,7 @@ getHeaderTable(),
 
     <div class="form-group mb-3">
         <label for="cargo_tutor">CARGO DE SU TUTOR</label>
-        <input onkeyup="mayus(this);" type="text" name="cargo_tutor" id="cargo_tutor" placeholder="Indique el cargo de su Tutor" class="form-control" required>
+        <input onkeyup="mayus(this);" pattern="[A-ZÁÉÍÓÚ ]{7,100}" type="text" name="cargo_tutor" id="cargo_tutor" placeholder="Indique el cargo de su Tutor" class="form-control" required>
         <div class="invalid-feedback">Escriba el cargo de su Tutor</div>
     </div>
 
@@ -13144,27 +13144,20 @@ getHeaderTable(),
 
     <div class="form-group mb-3">
         <label for="horas_proyecto">CANTIDAD DE HORAS DE SU PROYECTO</label>
-        <input type="number" name="horas_proyecto" id="horas_proyecto" placeholder="Indique la cantidad de horas de su proyecto" class="form-control">
+        <input type="number" name="horas_proyecto" id="horas_proyecto" placeholder="Indique la cantidad de horas de su proyecto" class="form-control" required>
         <div class="invalid-feedback">Escriba la cantidad de horas de su proyecto</div>
     </div>
 
     <div class="form-group mb-3">
       <label for="fecha_inicio">FECHA DE INICIO</label>
-      <input type="date" name="fecha_inicio" id="fecha_inicio" placeholder="Indique la fecha de inicio" class="form-control">
+      <input type="date" name="fecha_inicio" id="fecha_inicio" placeholder="Indique la fecha de inicio" class="form-control" required>
       <div class="invalid-feedback">Escriba la fecha de inicio</div>
   </div>
   <div class="form-group mb-3">
     <label for="fecha_finalizacion">FECHA DE FINALIZACION</label>
-    <input type="date" name="fecha_finalizacion" id="fecha_finalizacion" placeholder="Indique la fecha de finalizacion" class="form-control">
+    <input type="date" name="fecha_finalizacion" id="fecha_finalizacion" placeholder="Indique la fecha de finalizacion" class="form-control" required>
     <div class="invalid-feedback">Escriba la fecha de finalizacion</div>
 </div>
-<!--
-<div class="form-group mb-3">
-  <label for="titulo_al_que_opta">TITULO AL QUE OPTA</label>
-  <input onkeyup="mayus(this);" type="text" name="titulo_al_que_opta" id="titulo_al_que_opta" placeholder="Indique el titulo al que opta" class="form-control" required>
-  <div class="invalid-feedback">Escriba el titulo al que opta.<br><b>Ejemplo:<br>TECNICO SUPERIOR UNIVERSITARIO EN INFORMATICA<br>INGENIERO EN MECANICA INDUSTRIAL</b></div>
-</div>
--->
 
 
         <input class="btn btn-info" type="submit" value="Generar PDF">
@@ -13191,7 +13184,7 @@ document.getElementById('cantidad_integrantes').addEventListener('input', functi
         nombre.className = 'form-control';
         nombre.required = true;
         nombre.onkeyup = function() { mayus(this); };
-        nombre.pattern = '[A-Z ]{7,50}';
+        nombre.pattern = '[A-ZÁÉÍÓÚ ]{7,50}';
         container.appendChild(nombre);
 
         var cedula = document.createElement('input');
